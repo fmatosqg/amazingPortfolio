@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio_flutter/ui/common/TopNavigationView.dart';
 import 'package:portfolio_flutter/ui/portfolio/CrocmediaView.dart';
 
 void main() {
@@ -39,8 +40,13 @@ class LandingView extends StatelessWidget {
           ],
         ),
       ),
-      body: Container(
-        child: CrocmediaView(),
+      body: Column(
+        children: <Widget>[
+          TopNavigationView(),
+          Expanded(
+            child: CrocmediaView(),
+          ),
+        ],
       ),
     );
   }
