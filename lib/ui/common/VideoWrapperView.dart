@@ -45,24 +45,27 @@ class _VideoWrapperViewState extends State<VideoWrapperView> {
 
   @override
   Widget build(BuildContext context) {
-    return Material(
-      elevation: 4,
-      child: Column(
-        children: <Widget>[
-          Container(
-            child: AspectRatio(
-              aspectRatio: _controller.value.aspectRatio,
-              child: Stack(
-                alignment: Alignment.bottomCenter,
-                children: <Widget>[
-                  VideoPlayer(_controller),
-                  _PlayPauseOverlay(controller: _controller),
-                  VideoProgressIndicator(_controller, allowScrubbing: true),
-                ],
+    return Padding(
+      padding: const EdgeInsets.all(10.0), // we need it for the shadows
+      child: Material(
+        elevation: 3,
+        child: Column(
+          children: <Widget>[
+            Container(
+              child: AspectRatio(
+                aspectRatio: _controller.value.aspectRatio,
+                child: Stack(
+                  alignment: Alignment.bottomCenter,
+                  children: <Widget>[
+                    VideoPlayer(_controller),
+                    _PlayPauseOverlay(controller: _controller),
+                    VideoProgressIndicator(_controller, allowScrubbing: true),
+                  ],
+                ),
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

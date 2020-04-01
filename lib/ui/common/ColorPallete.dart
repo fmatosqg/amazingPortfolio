@@ -25,10 +25,13 @@ class ColorPallete {
       color: Color(0xfffff4f8),
     );
 
-    portfolioAppNameText =
-        _themeData.textTheme.headline6.copyWith(fontSize: 17);
+    ///////////////////////////////////////////////
+    portfolioAppNameText = _themeData.textTheme.headline6
+        .copyWith(fontSize: 18, fontFamily: 'Arvo');
 
-    porfolioBulletText = _themeData.textTheme.bodyText2.copyWith(fontSize: 15);
+    porfolioBulletText = _themeData.textTheme.bodyText2.copyWith(
+        fontSize: 15, fontFamily: "Lato", fontWeight: FontWeight.normal);
+
     porfolioHeaderText = _themeData.textTheme.headline6.copyWith(
         fontSize: 18, fontWeight: FontWeight.bold, color: Colors.grey[700]);
   }
