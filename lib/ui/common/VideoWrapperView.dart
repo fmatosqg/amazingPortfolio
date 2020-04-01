@@ -1,4 +1,4 @@
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:video_player/video_player.dart';
 
@@ -30,7 +30,10 @@ class _VideoWrapperViewState extends State<VideoWrapperView> {
       // mutes the video
       _controller.setVolume(0);
       // Plays the video once the widget is build and loaded.
-      _controller.play();
+
+      if (kReleaseMode) {
+        _controller.play();
+      }
     });
   }
 
@@ -42,7 +45,8 @@ class _VideoWrapperViewState extends State<VideoWrapperView> {
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
+    return Material(
+      elevation: 4,
       child: Column(
         children: <Widget>[
           Container(
