@@ -1,10 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio_flutter/domain/PortfolioRepository.dart';
 
-class ButterflyFreightQuotes extends StatelessWidget {
+import 'AppView.dart';
+
+class ButterflyFreightQuotesView extends StatelessWidget {
+  final _portfolioRepository = PortfolioRepository();
+
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Text("LB"),
+    return ListView(
+      children: [
+        TitleView(_portfolioRepository.butterflyFreightQuotes.aboutCompany),
+        AppView(_portfolioRepository.butterflyFreightQuotes),
+      ],
     );
   }
 }

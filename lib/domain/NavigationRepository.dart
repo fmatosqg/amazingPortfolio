@@ -1,41 +1,57 @@
 import 'dart:async';
 
+import 'package:portfolio_flutter/ui/portfolio/ButterflyFreightQuotes.dart';
+import 'package:portfolio_flutter/ui/portfolio/CrocmediaSenAppView.dart';
+import 'package:portfolio_flutter/ui/portfolio/CrocmediaView.dart';
+
+import 'PortfolioRepository.dart';
+
 class NavigationRepository {
-  static const driversSeat = "Crocmedia Driver's Seat";
-  static const senApp = "Crocmedia Sen App";
-  static const freightQuotes = "Butterfly Load Board";
+  List<NavigationData> _data;
 
-  final List<NavigationData> data = [
-    driversSeat,
-    senApp,
-    freightQuotes,
-  ].map((e) => NavigationData(e)).toList();
-
-  final _streamController = StreamController<String>();
+  final _streamController = StreamController<NavigationData>();
 
   NavigationRepository() {
-    _streamController.add(data.first.title);
+    final r = PortfolioRepository();
+
+    _data = [
+      NavigationData(
+          r.crocmediaDriversSeat.shortName, () => CrocmediaDriversSeatView()),
+      NavigationData(r.crocmediaSenApp.shortName, () => CrocmediaSenAppView()),
+
+      NavigationData(r.butterflyFreightQuotes.shortName,
+          () => ButterflyFreightQuotesView()),
+//      NavigationData(r.butterflyFlutterPoc.shortName, () => Container()),
+//      NavigationData(
+//          r.personalPortfolio.shortName, () => PersonalPortfolioView()),
+//      NavigationData(
+//          r.personalWallpapers.shortName, () => PersonalWallpaperView()),
+    ];
+
+    _streamController.add(_data.first);
   }
 
-  List<NavigationData> getEntries() {
-    return data;
+  getData() {
+    return _data;
   }
 
   void selectEntry(String entryTitle) {
-    if (data.firstWhere((element) => element.title == entryTitle,
-            orElse: () {}) !=
-        null) {
-      _streamController.add(entryTitle);
+    final entry = _data.firstWhere((element) => element.title == entryTitle,
+        orElse: () {});
+
+    if (entry != null) {
+      _streamController.add(entry);
     }
   }
 
-  Stream<String> selectedEntry() {
+  Stream<NavigationData> selectedEntry() {
     return _streamController.stream;
   }
 }
 
 class NavigationData {
   final String title;
+  final Function f;
 
-  NavigationData(this.title);
+  NavigationData(this.title, this.f);
 }
