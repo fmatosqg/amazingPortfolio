@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio_flutter/ui/common/TopNavigationView.dart';
-import 'package:portfolio_flutter/ui/portfolio/CrocmediaView.dart';
+
+import 'ui/LandingView.dart';
 
 void main() {
   runApp(MyApp());
@@ -15,39 +15,11 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: LandingView(),
-    );
-  }
-}
-
-class LandingView extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Row(
-          children: <Widget>[
-            Expanded(
-              child: Text("Fabio's Portfolio"),
-            ),
-            Text(
-              "Powered by Flutter.io",
-              style: Theme.of(context)
-                  .textTheme
-                  .bodyText1
-                  .copyWith(color: Colors.white54),
-            ),
-          ],
-        ),
-      ),
-      body: Column(
-        children: <Widget>[
-          TopNavigationView(),
-          Expanded(
-            child: CrocmediaView(),
-          ),
-        ],
-      ),
+      initialRoute: LandingView.routeName,
+      routes: {
+        LandingView.routeName: (context) => LandingView(),
+        '/': (context) => Container()
+      },
     );
   }
 }

@@ -8,35 +8,22 @@ import 'package:portfolio_flutter/domain/VideoRepository.dart';
 import 'package:portfolio_flutter/ui/common/ColorPallete.dart';
 import 'package:portfolio_flutter/ui/common/VideoWrapperView.dart';
 
-class CrocmediaView extends StatelessWidget {
+/// Videos and talking points about Driver's Seat
+///
+class CrocmediaDriversSeatView extends StatelessWidget {
   final _portfolioRepository = PortfolioRepository();
 
   @override
   Widget build(BuildContext context) {
-    final windowWidth = MediaQuery.of(context).size.width;
-    var width;
-
-    if (windowWidth > 800) {
-      width = 800;
-    } else {
-      width = windowWidth;
-    }
-
-    return Center(
-      child: Container(
-        width: width,
-        padding: EdgeInsets.symmetric(vertical: 30, horizontal: 16),
-        child: ListView(
-          children: [
-            TitleView(_portfolioRepository.crocmediaDriversSeat.aboutCompany),
-            Padding(
-              padding: const EdgeInsets.only(bottom: 20),
-              child: AppView(_portfolioRepository.crocmediaDriversSeat),
-            ),
-            AppView(_portfolioRepository.crocmediaSkinning),
-          ],
+    return ListView(
+      children: [
+        TitleView(_portfolioRepository.crocmediaDriversSeat.aboutCompany),
+        Padding(
+          padding: const EdgeInsets.only(bottom: 20),
+          child: AppView(_portfolioRepository.crocmediaDriversSeat),
         ),
-      ),
+        AppView(_portfolioRepository.crocmediaSkinning),
+      ],
     );
   }
 }
