@@ -16,15 +16,19 @@ class CrocmediaDriversSeatView extends StatelessWidget {
       children: [
         TitleView(_portfolioRepository.crocmediaDriversSeat.aboutCompany),
         AppView(_portfolioRepository.crocmediaDriversSeat),
-        Divider(
-          height: 30,
-          color: Colors.black26,
-          indent: 30,
-          endIndent: 30,
-          thickness: 0.5,
-        ),
+        buildDivider(),
         AppView(_portfolioRepository.crocmediaSkinning),
       ],
     );
   }
+}
+
+Widget buildDivider() {
+  return Divider(
+    height: 30,
+    color: Colors.black26,
+    indent: 30,
+    endIndent: 30,
+    thickness: 0.5,
+  );
 }

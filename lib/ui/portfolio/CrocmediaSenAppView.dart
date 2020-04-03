@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:portfolio_flutter/domain/PortfolioRepository.dart';
 
 import 'AppView.dart';
+import 'CrocmediaView.dart';
 
 /// Videos and talking points about Sen App
 ///
@@ -14,6 +15,8 @@ class CrocmediaSenAppView extends StatelessWidget {
       children: [
         TitleView(_portfolioRepository.crocmediaSenApp.aboutCompany),
         AppView(_portfolioRepository.crocmediaSenApp),
+        buildDivider(),
+        AppView(_portfolioRepository.crocmediaSenAudio),
       ],
     );
   }

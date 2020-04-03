@@ -20,7 +20,7 @@ class PortfolioRepository {
         "https://play.google.com/store/apps/details?id=com.crocmedia.nitro&hl=en",
     videoPath: VideoRepository.driversSeat,
     talkingPoints: [
-      "Greenfield app, fully reactive approach",
+      "Greenfield app, 100% written by me with fully reactive approach",
       "Landing: custom scrollable bottom bar",
       "Experts: chips wrap to next line",
       "News: Pager with custom tabs and hero",
@@ -42,19 +42,37 @@ class PortfolioRepository {
   final crocmediaSenApp = PortfolioData(
       aboutCompany: aboutCrocmedia,
       shortName: "Crocmedia Sen App",
+      videoPath: VideoRepository.senApp,
       appName: 'Sen App - digital radio',
       talkingPoints: [
-        "one",
-        "t",
+        "Reactive views in 'Today' screen (live video comes in at about 5 seconds)",
+        "Added analytics id tracker for users who need help in 'Settings' screen",
+        "Reuse scrolling bottom bar UI and models from Driver's Seat, implemented as standalone lib",
+        "Fixtures screen: UI and models implemented as standalone lib ",
+        "Add DI to project (Koin)",
+        "Preexisting code used both Glide and Picasso: eliminate Glide",
+        "Added geolocation by GPS in accordance to advertising/gambling state laws (catching up with iOS)",
+        "Support Portrait and Landscape"
+      ]);
+
+  final crocmediaSenAudio = PortfolioData(
+      aboutCompany: aboutCrocmedia,
+      shortName: "Crocmedia Sen App",
+      appName: 'Sen App - audio library',
+      videoPath: VideoRepository.senAppAudio,
+      talkingPoints: [
+        'Rip apart MediaPlayer implementation and replace with new library built on Exoplayer 2',
+        'Listeners + ViewModel approach keep every view and component close to source of truth',
+        'Added sleep timer: audio stops after 30,60,90... minutes to (catch up with iOS)',
+        'Revamped "Now Playing" tiles (catch up with iOS)',
+        'Animated FAB gives quick access to Audio bottom sheet (catch up with iOS)'
       ]);
 
   final butterflyFreightQuotes = PortfolioData(
     aboutCompany: aboutButterfly,
     shortName: "Butterfly Load Board",
     appName: 'Load Board',
-    talkingPoints: [
-      'a',
-    ],
+    talkingPoints: [],
   );
 
   final butterflyFlutterPoc = PortfolioData(
@@ -77,10 +95,15 @@ class PortfolioRepository {
 
   final personalWallpapers = PortfolioData(
     aboutCompany: aboutPersonal,
+    videoPath: VideoRepository.amazingWallpapers,
     shortName: 'Personal Wallpaper app',
     appName: 'Amazing Wallpapers',
     talkingPoints: [
-      'a',
+      'My 1st greenfield Android App, 100% done by me',
+      'Choose favorites among multiple feeds (reddit, twitter, instagram, flickr etc)',
+      'Daily updated',
+      'Detailed view background matches accents from picture'
+          'Deployed live in 2015 with Dagger 1'
     ],
   );
 }

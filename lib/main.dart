@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio_flutter/ui/common/PageNotFoundView.dart';
 
 import 'ui/LandingView.dart';
 
@@ -18,7 +19,7 @@ class MyApp extends StatelessWidget {
       initialRoute: LandingView.routeName,
       routes: {
         LandingView.routeName: (context) => LandingView(),
-        '/': (context) => Container()
+        '/': (context) => PageNotFoundView()
       },
     );
   }

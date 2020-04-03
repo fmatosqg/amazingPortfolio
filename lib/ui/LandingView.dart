@@ -24,6 +24,7 @@ class LandingView extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
+        leading: Container(),
         title: Row(
           children: <Widget>[
             Expanded(

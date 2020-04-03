@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:portfolio_flutter/ui/portfolio/ButterflyFreightQuotes.dart';
 import 'package:portfolio_flutter/ui/portfolio/CrocmediaSenAppView.dart';
 import 'package:portfolio_flutter/ui/portfolio/CrocmediaView.dart';
+import 'package:portfolio_flutter/ui/portfolio/PersonalProjects.dart';
 
 import 'PortfolioRepository.dart';
 
@@ -19,13 +20,13 @@ class NavigationRepository {
           r.crocmediaDriversSeat.shortName, () => CrocmediaDriversSeatView()),
       NavigationData(r.crocmediaSenApp.shortName, () => CrocmediaSenAppView()),
 
-      NavigationData(r.butterflyFreightQuotes.shortName,
-          () => ButterflyFreightQuotesView()),
+//      NavigationData(r.butterflyFreightQuotes.shortName,
+//          () => ButterflyFreightQuotesView()),
 //      NavigationData(r.butterflyFlutterPoc.shortName, () => Container()),
 //      NavigationData(
 //          r.personalPortfolio.shortName, () => PersonalPortfolioView()),
-//      NavigationData(
-//          r.personalWallpapers.shortName, () => PersonalWallpaperView()),
+      NavigationData(
+          r.personalWallpapers.shortName, () => PersonalWallpaperView()),
     ];
 
     _streamController.add(_data.first);
