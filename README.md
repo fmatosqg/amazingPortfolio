@@ -8,3 +8,9 @@ Videos can have quality reduced with ffmpeg. For example:
 
 ## Getting Started
 
+
+# Deploy
+- `flutter clean; flutter build web`
+- `cd build/web`
+- `tar czf ../portfolio.tgz .`
+
