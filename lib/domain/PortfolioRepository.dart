@@ -84,15 +84,6 @@ class PortfolioRepository {
     ],
   );
 
-  final personalPortfolio = PortfolioData(
-    aboutCompany: aboutPersonal,
-    shortName: 'Personal web site',
-    appName: 'Portfolio app (this web page)',
-    talkingPoints: [
-      'a',
-    ],
-  );
-
   final personalWallpapers = PortfolioData(
     aboutCompany: aboutPersonal,
     videoPath: VideoRepository.amazingWallpapers,
@@ -106,6 +97,27 @@ class PortfolioRepository {
           'Deployed live in 2015 with Dagger 1'
     ],
   );
+
+  final personalPortfolio = PortfolioData(
+      aboutCompany: aboutPersonal,
+      shortName: 'Personal web site',
+      appName: 'Portfolio website (this web page)',
+      githubLink: 'http://github.com/fmatosqg/amazingPortfolio',
+      talkingPoints: [
+        'This web page is developed using Flutter Web',
+        'Soon: SSL, responsive pages',
+      ]);
+
+  final personalFlutter = PortfolioData(
+    shortName: 'Personal Flutter projects',
+    appName: 'Low level canvas demo',
+    videoPath: VideoRepository.flutterParticles,
+    githubLink: 'http://github.com/fmatosqg/flutter_sample_bloc',
+    talkingPoints: [
+      'POC of particle system',
+      'Simple implementation of BLoC',
+    ],
+  );
 }
 
 class PortfolioData {
@@ -113,6 +125,7 @@ class PortfolioData {
   final String shortName;
   final String appName;
   final String storeLink;
+  final String githubLink;
   final String videoPath;
   final List<String> talkingPoints;
 
@@ -121,6 +134,7 @@ class PortfolioData {
     this.shortName,
     this.appName,
     this.storeLink,
+    this.githubLink,
     this.videoPath,
     this.talkingPoints,
   });

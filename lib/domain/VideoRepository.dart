@@ -6,4 +6,6 @@ class VideoRepository {
   static const senAppAudio = 'assets/videos/sen_audio.mp4';
 
   static const amazingWallpapers = 'assets/videos/amazing_wallpapers.mp4';
+
+  static const flutterParticles = 'assets/videos/flutter_particles.mp4';
 }

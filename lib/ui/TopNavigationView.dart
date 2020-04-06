@@ -38,7 +38,7 @@ class TopNavigationView extends StatelessWidget {
     return RaisedButton(
       padding: EdgeInsets.all(14),
       child: Text(
-        title,
+        title ?? '',
         style:
             ColorPallete.of(context).getNavigationButtonTextStyle(isSelected),
       ),

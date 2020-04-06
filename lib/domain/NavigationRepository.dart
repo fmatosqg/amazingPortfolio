@@ -1,8 +1,8 @@
 import 'dart:async';
 
-import 'package:portfolio_flutter/ui/portfolio/ButterflyFreightQuotes.dart';
 import 'package:portfolio_flutter/ui/portfolio/CrocmediaSenAppView.dart';
 import 'package:portfolio_flutter/ui/portfolio/CrocmediaView.dart';
+import 'package:portfolio_flutter/ui/portfolio/PersonalFlutter.dart';
 import 'package:portfolio_flutter/ui/portfolio/PersonalProjects.dart';
 
 import 'PortfolioRepository.dart';
@@ -27,6 +27,8 @@ class NavigationRepository {
 //          r.personalPortfolio.shortName, () => PersonalPortfolioView()),
       NavigationData(
           r.personalWallpapers.shortName, () => PersonalWallpaperView()),
+
+      NavigationData(r.personalFlutter.shortName, () => PersonalFlutterView()),
     ];
 
     _streamController.add(_data.first);

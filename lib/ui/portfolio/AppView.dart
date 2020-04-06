@@ -50,7 +50,7 @@ class FeatureListView extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.only(bottom: 10),
                   child: Text(
-                    _data.appName,
+                    _data?.appName ?? '',
                     style: ColorPallete.of(context).portfolioAppNameText,
                   ),
                 )),
@@ -92,7 +92,7 @@ class TitleView extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.only(bottom: 20),
       child: Text(
-        _text,
+        _text ?? '',
         style: ColorPallete.of(context).porfolioHeaderText,
       ),
     );
