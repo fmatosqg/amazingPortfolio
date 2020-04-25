@@ -91,10 +91,10 @@ class PortfolioRepository {
     appName: 'Amazing Wallpapers',
     talkingPoints: [
       'My 1st greenfield Android App, 100% done by me',
+      'Deployed live in 2015 with Dagger 1',
       'Choose favorites among multiple feeds (reddit, twitter, instagram, flickr etc)',
       'Daily updated',
-      'Detailed view background matches accents from picture'
-          'Deployed live in 2015 with Dagger 1'
+      'Detailed view background matches accents from picture',
     ],
   );
 
@@ -103,9 +103,11 @@ class PortfolioRepository {
       shortName: 'Personal web site',
       appName: 'Portfolio website (this web page)',
       githubLink: 'http://github.com/fmatosqg/amazingPortfolio',
+      imageStillPath: "assets/images/portfolio_screenshot.png",
       talkingPoints: [
         'This web page is developed using Flutter Web',
-        'Soon: SSL, responsive pages',
+        'Responsive: breakpoints at 500px and 900px',
+        'Soon: SSL and more',
       ]);
 
   final personalFlutter = PortfolioData(
@@ -127,6 +129,7 @@ class PortfolioData {
   final String storeLink;
   final String githubLink;
   final String videoPath;
+  final String imageStillPath;
   final List<String> talkingPoints;
 
   PortfolioData({
@@ -136,6 +139,7 @@ class PortfolioData {
     this.storeLink,
     this.githubLink,
     this.videoPath,
+    this.imageStillPath,
     this.talkingPoints,
   });
 }

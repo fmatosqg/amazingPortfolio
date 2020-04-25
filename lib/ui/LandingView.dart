@@ -43,15 +43,17 @@ class LandingView extends StatelessWidget {
       body: StreamBuilder<NavigationData>(
           stream: _navigationRepository.selectedEntry(),
           builder: (context, snapshot) {
-            return Center(
-              child: Container(
-                width: width,
-                child: Column(
-                  children: <Widget>[
-                    TopNavigationView(_navigationRepository.getData(),
-                        snapshot?.data?.title, _navigate),
-                    Expanded(child: snapshot?.data?.f() ?? Container()),
-                  ],
+            return Scrollbar(
+              child: Center(
+                child: Container(
+                  width: width,
+                  child: Column(
+                    children: <Widget>[
+                      TopNavigationView(_navigationRepository.getData(),
+                          snapshot?.data?.title, _navigate),
+                      Expanded(child: snapshot?.data?.f() ?? Container()),
+                    ],
+                  ),
                 ),
               ),
             );

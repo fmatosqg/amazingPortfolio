@@ -15,41 +15,8 @@ class PersonalFlutterView extends StatelessWidget {
       children: [
         TitleView(_portfolioRepository.personalPortfolio.aboutCompany),
         buildDivider(),
-        Padding(
-          padding: const EdgeInsets.only(top: 20),
-          child: Row(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: <Widget>[
-              Padding(
-                padding: const EdgeInsets.only(left: 10, right: 20),
-                child: Material(
-                  elevation: 3,
-                  child: Container(
-                    foregroundDecoration: BoxDecoration(color: Colors.black26),
-                    width: 180,
-                    child:
-                        Image.asset("assets/images/portfolio_screenshot.png"),
-                  ),
-                ),
-              ),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: <Widget>[
-                  FeatureListView(_portfolioRepository.personalPortfolio),
-                  FlatButton(
-                      child: Text("See backlog on Github issues"),
-                      onPressed: () {
-                        launch(
-                            _portfolioRepository.personalPortfolio.githubLink +
-                                '/issues');
-                      }),
-                ],
-              ),
-            ],
-          ),
-        ),
+        AppView(_portfolioRepository.personalPortfolio),
         buildDivider(),
-        TitleView(_portfolioRepository.personalFlutter.aboutCompany),
         AppView(_portfolioRepository.personalFlutter),
       ],
     );

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio_flutter/domain/PortfolioRepository.dart';
+import 'package:portfolio_flutter/ui/ResponsiveWrapperView.dart';
 import 'package:portfolio_flutter/ui/common/ColorPallete.dart';
 import 'package:portfolio_flutter/ui/common/VideoWrapperView.dart';
 
@@ -12,15 +13,29 @@ class AppView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    return ResponsiveWrapperView(
+      desktop: _buildDesktop(context),
+      mobile: _buildMobile(context),
+    );
+  }
+
+  Widget _buildMobile(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 10),
+      child: Column(
+        children: <Widget>[
+          FeatureListView(_data),
+          _buildPreview(context),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildDesktop(BuildContext context) {
     return Row(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
-        _data.videoPath != null
-            ? Container(
-                width: 200,
-                child: VideoWrapperView(_data.videoPath),
-              )
-            : Container(),
+        _buildPreview(context),
         Expanded(
           child: Padding(
             padding: EdgeInsets.only(top: 10, left: 20),
@@ -28,6 +43,29 @@ class AppView extends StatelessWidget {
           ),
         ),
       ],
+    );
+  }
+
+  Widget _buildPreview(BuildContext context) {
+    return _data.videoPath != null
+        ? Container(
+            width: 200,
+            child: VideoWrapperView(_data.videoPath),
+          )
+        : _buildImagePreview(context);
+  }
+
+  Widget _buildImagePreview(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.only(left: 10, right: 20),
+      child: Material(
+        elevation: 3,
+        child: Container(
+          foregroundDecoration: BoxDecoration(color: Colors.black26),
+          width: 180,
+          child: Image.asset(_data.imageStillPath),
+        ),
+      ),
     );
   }
 }
@@ -90,7 +128,7 @@ class TitleView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(bottom: 20),
+      padding: const EdgeInsets.only(bottom: 20, top: 15),
       child: Text(
         _text ?? '',
         style: ColorPallete.of(context).porfolioHeaderText,
