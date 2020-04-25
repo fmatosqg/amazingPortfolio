@@ -9,21 +9,21 @@ class ResponsiveWrapperView extends StatelessWidget {
   final int minDesktopHeight;
 
   ResponsiveWrapperView(
-      {@required this.desktop,
-      @required this.mobile,
+      {this.desktop,
+      this.mobile,
       this.minDesktopWidth = 500,
       this.minDesktopHeight = 500});
 
   @override
   Widget build(BuildContext context) {
-    if (_isDesktop(context)) {
+    if (isDesktop(context)) {
       return desktop ?? Container();
     } else {
       return mobile ?? Container();
     }
   }
 
-  bool _isDesktop(BuildContext context) {
+  bool isDesktop(BuildContext context) {
     final mq = MediaQuery.of(context);
 
     return (mq.size.width > minDesktopWidth) &&

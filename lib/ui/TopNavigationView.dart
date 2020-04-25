@@ -51,26 +51,6 @@ class TopNavigationView extends StatelessWidget {
     );
   }
 }
-//
-//class TopNavigationMobileView extends TopNavigationView {
-//  TopNavigationMobileView(List<NavigationData> buttonTitleList,
-//      String selectedTitle, Function(BuildContext, String) onPressed)
-//      : super(buttonTitleList, selectedTitle, onPressed);
-//
-//  @override
-//  Widget build(BuildContext context) {
-//    return Padding(
-//      padding: const EdgeInsets.all(8.0),
-//      child: Wrap(
-//        spacing: 20,
-//        children: <Widget>[
-//          _buildButton(context, 'Android', false, internalPadding: 0),
-//          _buildButton(context, 'Flutter', false, internalPadding: 0),
-//        ],
-//      ),
-//    );
-//  }
-//}
 
 class TopNavigationDesktopView extends TopNavigationView {
   TopNavigationDesktopView(List<NavigationData> buttonTitleList,

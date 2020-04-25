@@ -6,7 +6,9 @@ class ColorPallete {
 
   var porfolioBulletText;
   var porfolioHeaderText;
-  var portfolioAppNameText;
+  TextStyle portfolioAppNameText;
+  TextStyle drawerHeaderText;
+  TextStyle drawerButtonText;
 
   static ColorPallete of(BuildContext context) {
     return ColorPallete(context);
@@ -35,6 +37,17 @@ class ColorPallete {
     porfolioHeaderText = _themeData.textTheme.headline6.copyWith(
         fontSize: 18, fontWeight: FontWeight.bold, color: Colors.grey[700]);
 
+    drawerHeaderText = _themeData.textTheme.headline6.copyWith(
+        fontSize: 18,
+        fontWeight: FontWeight.bold,
+        color: Colors.white70,
+        fontFamily: 'Arvo');
+
+    drawerButtonText = _themeData.textTheme.headline6.copyWith(
+      fontSize: 16,
+      fontFamily: 'Arvo',
+      color: Colors.grey[700],
+    );
   }
 
   Color getNavigationButtonColor(bool isSelected) {

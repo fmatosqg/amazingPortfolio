@@ -34,7 +34,7 @@ class NavigationRepository {
     _streamController.add(_data.first);
   }
 
-  getData() {
+  List<NavigationData> getData() {
     return _data;
   }
 
