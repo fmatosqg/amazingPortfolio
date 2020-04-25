@@ -3,6 +3,7 @@ import 'package:portfolio_flutter/domain/PortfolioRepository.dart';
 import 'package:portfolio_flutter/ui/ResponsiveWrapperView.dart';
 import 'package:portfolio_flutter/ui/common/ColorPallete.dart';
 import 'package:portfolio_flutter/ui/common/VideoWrapperView.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 /// Holds a video and a [FeatureListView].
 ///
@@ -91,7 +92,8 @@ class FeatureListView extends StatelessWidget {
                     _data?.appName ?? '',
                     style: ColorPallete.of(context).portfolioAppNameText,
                   ),
-                )),
+                ))
+            ..add(_buildRepositoryLink(context)),
     );
   }
 
@@ -117,6 +119,21 @@ class FeatureListView extends StatelessWidget {
         ],
       ),
     );
+  }
+
+  Widget _buildRepositoryLink(BuildContext context) {
+    return _data.githubLink != null
+        ? Container(
+            child: MaterialButton(
+              color: Colors.white70,
+              elevation: 2,
+              child: Text('Read Source Code'),
+              onPressed: () {
+                launch(_data.githubLink);
+              },
+            ),
+          )
+        : Container();
   }
 }
 

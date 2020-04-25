@@ -114,7 +114,7 @@ class PortfolioRepository {
     shortName: 'Personal Flutter projects',
     appName: 'Low level canvas demo',
     videoPath: VideoRepository.flutterParticles,
-    githubLink: 'http://github.com/fmatosqg/flutter_sample_bloc',
+    githubLink: 'http://github.com/fmatosqg/flutter_sample_bloc.git',
     talkingPoints: [
       'POC of particle system',
       'Simple implementation of BLoC',
