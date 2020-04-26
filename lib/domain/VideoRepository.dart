@@ -8,4 +8,5 @@ class VideoRepository {
   static const amazingWallpapers = 'assets/videos/amazing_wallpapers.mp4';
 
   static const flutterParticles = 'assets/videos/flutter_particles.mp4';
+  static const openInvest = 'assets/videos/openinvest.mp4';
 }

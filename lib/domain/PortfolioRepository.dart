@@ -12,6 +12,14 @@ class PortfolioRepository {
   static const aboutPersonal =
       "Fabio is an experienced mobile developer who likes to code for fun.";
 
+  /////////////////////////////
+  static const aboutRoadhouse = "Roadhouse is an Australian Digital Agency.";
+
+  static const aboutOpenInvest =
+      'OpenInvest is a Public Benefit Corporation and asset manager using Dynamic Custom Indexing technology.';
+
+  static const aboutRoadhouseOpeninvest = '$aboutRoadhouse \n$aboutOpenInvest';
+
   final crocmediaDriversSeat = PortfolioData(
     aboutCompany: aboutCrocmedia,
     shortName: "Crocmedia Driver's Seat",
@@ -67,6 +75,21 @@ class PortfolioRepository {
         'Revamped "Now Playing" tiles (catch up with iOS)',
         'Animated FAB gives quick access to Audio bottom sheet (catch up with iOS)'
       ]);
+
+  final openInvest = PortfolioData(
+    aboutCompany: aboutRoadhouseOpeninvest,
+    shortName: 'OpenInvest',
+    appName: 'Roadhouse: OpenInvest',
+    storeLink:
+        'https://play.google.com/store/apps/details?id=au.net.openinvest.app',
+    videoPath: VideoRepository.openInvest,
+    talkingPoints: [
+      'Built in 4 weeks, 10k lines written by me (>85% of whole app)',
+      'Code is > 98% kotlin, using iOS code as reference',
+      'Reactive (RxJava2), multi-module architecture (Dagger 2 with scopes)',
+      'Generous use of mocked data to stress errors and crashes',
+    ],
+  );
 
   final butterflyFreightQuotes = PortfolioData(
     aboutCompany: aboutButterfly,

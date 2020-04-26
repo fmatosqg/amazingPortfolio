@@ -124,6 +124,7 @@ class FeatureListView extends StatelessWidget {
   Widget _buildRepositoryLink(BuildContext context) {
     return _data.githubLink != null
         ? Container(
+            padding: EdgeInsets.only(left: 10, bottom: 20),
             child: MaterialButton(
               color: Colors.white70,
               elevation: 2,
