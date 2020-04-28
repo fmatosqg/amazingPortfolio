@@ -4,6 +4,7 @@ import 'package:portfolio_flutter/ui/portfolio/CrocmediaSenAppView.dart';
 import 'package:portfolio_flutter/ui/portfolio/CrocmediaView.dart';
 import 'package:portfolio_flutter/ui/portfolio/PersonalFlutter.dart';
 import 'package:portfolio_flutter/ui/portfolio/PersonalProjects.dart';
+import 'package:portfolio_flutter/ui/portfolio/RoadhouseView.dart';
 
 import 'PortfolioRepository.dart';
 
@@ -29,6 +30,8 @@ class NavigationRepository {
           r.personalWallpapers.shortName, () => PersonalWallpaperView()),
 
       NavigationData(r.personalFlutter.shortName, () => PersonalFlutterView()),
+      NavigationData(r.openInvest.shortName, () => RoadhouseView()),
+//      NavigationData(r.coCreations.shortName, () => CoCreationView()),
     ];
 
     _streamController.add(_data.first);
@@ -39,8 +42,9 @@ class NavigationRepository {
   }
 
   void selectEntry(String entryTitle) {
-    final entry = _data.firstWhere((element) => element.title == entryTitle,
-        orElse: () {});
+    final entry = _data.firstWhere(
+      (element) => element.title == entryTitle,
+    );
 
     if (entry != null) {
       _streamController.add(entry);

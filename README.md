@@ -8,3 +8,7 @@ Videos can have quality reduced with ffmpeg. For example:
 
 ## Getting Started
 
+# Deploy
+- change the version on `index.html` on `main.dart.js?version=1` so your users' caches will not try to reuse same code
+- `flutter build web`
+- tar contents of `./build/web` folder and upload to server

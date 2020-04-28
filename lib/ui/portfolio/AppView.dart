@@ -93,7 +93,8 @@ class FeatureListView extends StatelessWidget {
                     style: ColorPallete.of(context).portfolioAppNameText,
                   ),
                 ))
-            ..add(_buildRepositoryLink(context)),
+            ..add(_buildRepositoryLink(context))
+            ..add(_buildStoreLink(context)),
     );
   }
 
@@ -122,15 +123,23 @@ class FeatureListView extends StatelessWidget {
   }
 
   Widget _buildRepositoryLink(BuildContext context) {
-    return _data.githubLink != null
+    return _buildButton('Read Source Code', _data.githubLink);
+  }
+
+  Widget _buildStoreLink(BuildContext context) {
+    return _buildButton('See on Play Store', _data.storeLink);
+  }
+
+  Widget _buildButton(String text, String link) {
+    return link != null
         ? Container(
             padding: EdgeInsets.only(left: 10, bottom: 20),
             child: MaterialButton(
               color: Colors.white70,
               elevation: 2,
-              child: Text('Read Source Code'),
+              child: Text(text),
               onPressed: () {
-                launch(_data.githubLink);
+                launch(link);
               },
             ),
           )

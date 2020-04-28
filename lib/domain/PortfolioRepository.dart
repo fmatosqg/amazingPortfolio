@@ -22,7 +22,7 @@ class PortfolioRepository {
 
   final crocmediaDriversSeat = PortfolioData(
     aboutCompany: aboutCrocmedia,
-    shortName: "Crocmedia Driver's Seat",
+    shortName: "Driver's Seat",
     appName: "Driver's Seat",
     storeLink:
         "https://play.google.com/store/apps/details?id=com.crocmedia.nitro&hl=en",
@@ -49,8 +49,10 @@ class PortfolioRepository {
 
   final crocmediaSenApp = PortfolioData(
       aboutCompany: aboutCrocmedia,
-      shortName: "Crocmedia Sen App",
+      shortName: "Sen App",
       videoPath: VideoRepository.senApp,
+      storeLink:
+          'https://play.google.com/store/apps/details?id=com.deepend.sen',
       appName: 'Sen App - digital radio',
       talkingPoints: [
         "Reactive views in 'Today' screen (live video comes in at about 5 seconds)",
@@ -65,7 +67,7 @@ class PortfolioRepository {
 
   final crocmediaSenAudio = PortfolioData(
       aboutCompany: aboutCrocmedia,
-      shortName: "Crocmedia Sen App",
+      shortName: "Sen App",
       appName: 'Sen App - audio library',
       videoPath: VideoRepository.senAppAudio,
       talkingPoints: [
@@ -91,6 +93,8 @@ class PortfolioRepository {
     ],
   );
 
+  final coCreations = PortfolioData(shortName: 'myHealth Hub');
+
   final butterflyFreightQuotes = PortfolioData(
     aboutCompany: aboutButterfly,
     shortName: "Butterfly Load Board",
@@ -112,6 +116,8 @@ class PortfolioRepository {
     videoPath: VideoRepository.amazingWallpapers,
     shortName: 'Personal Wallpaper app',
     appName: 'Amazing Wallpapers',
+    storeLink:
+        'https://play.google.com/store/apps/details?id=com.fmatos.amazingwallpapers',
     talkingPoints: [
       'My 1st greenfield Android App, 100% done by me',
       'Deployed live in 2015 with Dagger 1',
