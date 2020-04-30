@@ -14,6 +14,7 @@ class LandingView extends StatelessWidget {
 
   static const maxWidth = 900;
   static const widthGapFactor = 0.9;
+  static const flutterHP='https://flutter.io';
 
   @override
   Widget build(BuildContext context) {
@@ -60,12 +61,17 @@ class LandingView extends StatelessWidget {
         Expanded(
           child: Text("Fabio's Portfolio"),
         ),
-        Text(
-          "Powered by Flutter.io",
-          style: Theme.of(context)
-              .textTheme
-              .bodyText1
-              .copyWith(color: Colors.white54),
+        FlatButton(
+          child: Text(
+            "Powered by Flutter.io",
+            style: Theme.of(context)
+                .textTheme
+                .bodyText1
+                .copyWith(color: Colors.white54),
+          ),
+          onPressed: () {
+            launch(flutterHP);
+          },
         ),
       ],
     );
@@ -142,7 +148,7 @@ class LandingView extends StatelessWidget {
               .copyWith(color: Colors.grey[700]),
         ),
         onPressed: () {
-          launch('https://flutter.io');
+          launch(flutterHP);
         },
       ),
     );

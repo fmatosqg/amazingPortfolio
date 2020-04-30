@@ -10,6 +10,9 @@ class ColorPallete {
   TextStyle drawerHeaderText;
   TextStyle drawerButtonText;
 
+  TextStyle contactLabel;
+  TextStyle contactValue;
+
   static ColorPallete of(BuildContext context) {
     return ColorPallete(context);
   }
@@ -47,6 +50,13 @@ class ColorPallete {
       fontSize: 16,
       fontFamily: 'Arvo',
       color: Colors.grey[700],
+    );
+
+    contactValue = _themeData.textTheme.headline6
+        .copyWith(fontSize: 16, color: Colors.black54, fontFamily: 'Arvo');
+
+    contactLabel = contactValue.copyWith(
+      fontWeight: FontWeight.bold,
     );
   }
 
