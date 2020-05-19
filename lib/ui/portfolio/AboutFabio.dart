@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:portfolio_flutter/ui/common/ColorPallete.dart';
@@ -51,18 +52,38 @@ class AboutFabio extends StatelessWidget {
   }
 
   TableRow _buildRow(BuildContext context, String title, String content) {
+    final double rowHeight = 40;
+
     return TableRow(
+      decoration: BoxDecoration(
+//        border: Border.all(color: Colors.blue, width: 1),
+      ),
       children: <Widget>[
-        Text('$title:', style: ColorPallete.of(context).contactLabel),
-        FlatButton(
-          child: Text(content, style: ColorPallete.of(context).contactValue),
-          onPressed: () {
-            canLaunch(content).then((value) {
-              if (value == true) {
-                launch(content);
-              }
-            });
-          },
+        ConstrainedBox(
+          constraints: BoxConstraints.tightForFinite(height: rowHeight),
+          child: Align(
+            alignment: Alignment.centerRight,
+            child: Container(
+              child:
+                  Text('$title:', style: ColorPallete.of(context).contactLabel),
+            ),
+          ),
+        ),
+        ConstrainedBox(
+          constraints: BoxConstraints.tightForFinite(height: rowHeight),
+          child: FlatButton(
+            child: Align(
+                alignment: Alignment.centerLeft,
+                child: Text(content,
+                    style: ColorPallete.of(context).contactValue)),
+            onPressed: () {
+              canLaunch(content).then((value) {
+                if (value == true) {
+                  launch(content);
+                }
+              });
+            },
+          ),
         )
       ],
     );

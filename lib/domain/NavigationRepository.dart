@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:portfolio_flutter/ui/portfolio/AboutFabio.dart';
+import 'package:portfolio_flutter/ui/portfolio/CoCreationsView.dart';
 import 'package:portfolio_flutter/ui/portfolio/CrocmediaSenAppView.dart';
 import 'package:portfolio_flutter/ui/portfolio/CrocmediaView.dart';
 import 'package:portfolio_flutter/ui/portfolio/PersonalFlutter.dart';
@@ -19,7 +20,7 @@ class NavigationRepository {
 
     _data = [
 
-      NavigationData('About Fabio',() => AboutFabio()),
+      NavigationData('Contact Information',() => AboutFabio()),
       NavigationData(
           r.crocmediaDriversSeat.shortName, () => CrocmediaDriversSeatView()),
       NavigationData(r.crocmediaSenApp.shortName, () => CrocmediaSenAppView()),
