@@ -93,7 +93,22 @@ class PortfolioRepository {
     ],
   );
 
-  final coCreations = PortfolioData(shortName: 'myHealth Hub');
+// https://thediary.com
+  final coCreations = PortfolioData(
+    aboutCompany:
+        "CoCreations is a Digital Agency.\nThe Diary is the company behind the app \"myHealth Hub\", a Health Care management platform.",
+    shortName: 'myHealth Hub',
+    appName: "myHealth Hub",
+    videoPath: VideoRepository.myHealth,
+    storeLink:
+        'https://play.google.com/store/apps/details?id=com.thediary.careproapp',
+    talkingPoints: [
+      "Join flutter team after most MVP features were developed",
+      "Fix bugs and develop few remaining features",
+      "Write golden tests to verify behavior through code refactor",
+      "Launch 1st version of app on Play Store"
+    ],
+  );
 
   final butterflyFreightQuotes = PortfolioData(
     aboutCompany: aboutButterfly,
@@ -140,7 +155,7 @@ class PortfolioRepository {
       ]);
 
   final personalFlutter = PortfolioData(
-    shortName: 'Personal Flutter projects',
+    shortName: 'Flutter projects',
     appName: 'Low level canvas demo',
     videoPath: VideoRepository.flutterParticles,
     githubLink: 'http://github.com/fmatosqg/flutter_sample_bloc.git',
@@ -149,6 +164,39 @@ class PortfolioRepository {
       'Simple implementation of BLoC',
     ],
   );
+
+  final openSourceContrib =
+      PortfolioData(shortName: 'Open Source Contributions');
+
+  final List<ContributionData> contributions = [
+    ContributionData(
+        about: "Flutter official tools",
+        contribution:
+            'Allows scan asset folder in order to include all files in given folder. Previously a folder with 50 assets had to specify each one of them in pubspec.yaml, taking 50 lines.',
+        contributionLink: 'https://t.co/zygHwoQdMZ?amp=1',
+        // 'https://twitter.com/MiSvTh/status/1001365466177245184',
+        projectLink: 'https://flutter.dev'),
+    ContributionData(
+        about: 'Flutter Camera Crop plugin',
+        contribution:
+            'Fix crashes associated with android platform plugin registration.',
+        projectLink: 'https://github.com/hnvn/flutter_image_cropper',
+        contributionLink:
+            'https://github.com/hnvn/flutter_image_cropper/pull/167#event-3420861375'),
+    ContributionData(
+        about: 'Android Studio plugin ADB Idea',
+        projectLink: 'https://plugins.jetbrains.com/plugin/7380-adb-idea',
+        contributionLink:
+            'https://github.com/pbreault/adb-idea/pull/43#issuecomment-215081693',
+        contribution:
+            'Migrate build files from maven to gradle, and a few extra improvements.'),
+    ContributionData(
+        about: 'Koin support for Work Manager (WIP)',
+        contribution:
+            '1st class support for creation of ListenableWorkers with customized constructors.',
+        contributionLink: 'https://github.com/InsertKoinIO/koin/pull/719',
+        projectLink: 'https://insert-koin.io/'),
+  ];
 }
 
 class PortfolioData {
@@ -171,4 +219,14 @@ class PortfolioData {
     this.imageStillPath,
     this.talkingPoints,
   });
+}
+
+class ContributionData {
+  final String about;
+  final String contribution;
+  final String projectLink;
+  final String contributionLink;
+
+  ContributionData(
+      {this.about, this.contribution, this.projectLink, this.contributionLink});
 }

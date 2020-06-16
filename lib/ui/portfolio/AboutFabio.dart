@@ -11,42 +11,45 @@ class AboutFabio extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: <Widget>[
-          TitleView(
-              "Fabio is a seasoned developer, experienced in Android Native and enthusiast about Flutter for Mobile, Web and Desktop."),
-          buildDivider(),
-          Row(
-            crossAxisAlignment: CrossAxisAlignment.end,
-            children: <Widget>[
-              Container(
-                padding: EdgeInsets.only(right: 20),
-                width: 60,
-                child: Image.asset("assets/images/logo.png"),
-              ),
-              Text(
-                'Fabio de Matos',
-                style: ColorPallete.of(context).porfolioHeaderText,
-              ),
-            ],
-          ),
-          Padding(
-            padding: const EdgeInsets.only(top: 20),
-            child: Table(
-              defaultColumnWidth: IntrinsicColumnWidth(),
-//              defaultVerticalAlignment: TableCellVerticalAlignment.baseline,
-              children: [
-                _buildRow(context, 'email', 'amazingappsemail@gmail.com'),
-                _buildRow(context, 'medium', 'https://medium.com/@fmatosqg'),
-                _buildRow(context, 'linkedin',
-                    'https://www.linkedin.com/in/fabio-de-matos'),
-                _buildRow(context, 'CV',
-                    'https://docs.google.com/document/d/1Pdqs9_n0IssJIiDh_Ojj-9XHOQizakycMdtUIyAGc1Y/edit'),
+      child: Container(
+        // color: Colors.red.withOpacity(0.1),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            TitleView(
+                "Fabio is a seasoned developer, experienced in Android Native and enthusiast about Flutter for Mobile, Web and Desktop."),
+            buildDivider(),
+            
+            Row(
+              crossAxisAlignment: CrossAxisAlignment.end,
+              children: <Widget>[
+                Container(
+                  padding: EdgeInsets.only(right: 20),
+                  width: 60,
+                  child: Image.asset("assets/images/logo.png"),
+                ),
+                Text(
+                  'Fabio de Matos',
+                  style: ColorPallete.of(context).porfolioHeaderText,
+                ),
               ],
             ),
-          ),
-        ],
+            Padding(
+              padding: const EdgeInsets.only(top: 20),
+              child: Table(
+                defaultColumnWidth: IntrinsicColumnWidth(),
+                children: [
+                  _buildRow(context, 'email', 'amazingappsemail@gmail.com'),
+                  _buildRow(context, 'medium', 'https://medium.com/@fmatosqg'),
+                  _buildRow(context, 'linkedin',
+                      'https://www.linkedin.com/in/fabio-de-matos'),
+                  _buildRow(context, 'CV',
+                      'https://docs.google.com/document/d/1Pdqs9_n0IssJIiDh_Ojj-9XHOQizakycMdtUIyAGc1Y/edit'),
+                ],
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
@@ -55,9 +58,7 @@ class AboutFabio extends StatelessWidget {
     final double rowHeight = 40;
 
     return TableRow(
-      decoration: BoxDecoration(
-//        border: Border.all(color: Colors.blue, width: 1),
-      ),
+      
       children: <Widget>[
         ConstrainedBox(
           constraints: BoxConstraints.tightForFinite(height: rowHeight),

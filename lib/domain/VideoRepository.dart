@@ -9,4 +9,6 @@ class VideoRepository {
 
   static const flutterParticles = 'assets/videos/flutter_particles.mp4';
   static const openInvest = 'assets/videos/openinvest.mp4';
+
+  static const myHealth = "assets/videos/myhealth.mp4";
 }

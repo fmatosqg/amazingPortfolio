@@ -35,7 +35,9 @@ class NavigationRepository {
 
       NavigationData(r.personalFlutter.shortName, () => PersonalFlutterView()),
       NavigationData(r.openInvest.shortName, () => RoadhouseView()),
-//      NavigationData(r.coCreations.shortName, () => CoCreationView()),
+      NavigationData(r.coCreations.shortName, () => CoCreationView()),
+      NavigationData(r.openSourceContrib.shortName, () => Contributions())
+
     ];
 
     _streamController.add(_data.first);

@@ -57,17 +57,19 @@ class AppView extends StatelessWidget {
   }
 
   Widget _buildImagePreview(BuildContext context) {
-    return Padding(
+    return  _data.imageStillPath != null 
+?    
+    Padding(
       padding: const EdgeInsets.only(left: 10, right: 20),
       child: Material(
         elevation: 3,
-        child: Container(
+        child: Container( 
           foregroundDecoration: BoxDecoration(color: Colors.black26),
           width: 180,
           child: Image.asset(_data.imageStillPath),
         ),
       ),
-    );
+    ): Container( );
   }
 }
 
@@ -80,10 +82,12 @@ class FeatureListView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
+    var talkingPoints =  _data.talkingPoints ?? [];
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children:
-          _data.talkingPoints.map((e) => _buildBullet(context, e)).toList()
+         talkingPoints.map((e) => _buildBullet(context, e)).toList()
             ..insert(
                 0,
                 Padding(
